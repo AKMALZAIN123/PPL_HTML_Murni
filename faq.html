@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Bhineka Cipta Kreasi</title>
+    <link rel="stylesheet" href="faq.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-print"></i>
+                    <span>Bhineka Cipta Kreasi</span>
+                </a>
+                
+                <div class="nav-links" id="navLinks">
+                    <a href="index.html" class="active">Beranda</a>
+                    <a href="produk.html">Produk</a>
+                    <a href="about.html">Tentang</a>
+                    <a href="kontak.html">Kontak</a>
+                </div>
+                
+                <div class="nav-actions">
+                    <button class="icon-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <a href="cart.html" class="icon-btn cart-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge">0</span>
+                    </a>
+                    <a href="loginpage.html" class="icon-btn">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <div class="breadcrumb-items">
+                <a href="index.html">
+                    <i class="fas fa-home"></i>
+                    Beranda
+                </a>
+                <i class="fas fa-chevron-right"></i>
+                <span>FAQ</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-icon">
+                <i class="fas fa-question-circle"></i>
+            </div>
+            <h1>Pertanyaan yang Sering Diajukan</h1>
+            <p>Temukan jawaban atas pertanyaan Anda di sini</p>
+            
+            <!-- Search Bar -->
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="faqSearch" placeholder="Cari pertanyaan...">
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <!-- Category Tabs -->
+            <div class="category-tabs">
+                <button class="tab-btn active" data-category="all">
+                    <i class="fas fa-th"></i>
+                    Semua
+                </button>
+                <button class="tab-btn" data-category="umum">
+                    <i class="fas fa-info-circle"></i>
+                    Umum
+                </button>
+                <button class="tab-btn" data-category="pemesanan">
+                    <i class="fas fa-shopping-cart"></i>
+                    Pemesanan
+                </button>
+                <button class="tab-btn" data-category="pembayaran">
+                    <i class="fas fa-credit-card"></i>
+                    Pembayaran
+                </button>
+                <button class="tab-btn" data-category="pengiriman">
+                    <i class="fas fa-truck"></i>
+                    Pengiriman
+                </button>
+                <button class="tab-btn" data-category="produk">
+                    <i class="fas fa-box"></i>
+                    Produk
+                </button>
+            </div>
+
+            <!-- FAQ Content -->
+            <div class="faq-content">
+                <!-- Umum -->
+                <div class="faq-item" data-category="umum">
+                    <div class="faq-question">
+                        <h3>Apa itu Bhineka Cipta Kreasi?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Bhineka Cipta Kreasi adalah perusahaan percetakan dan periklanan yang bergerak di bidang pembuatan media promosi seperti banner, spanduk, kartu undangan, lanyard, merchandise, dan berbagai produk percetakan lainnya. Kami telah berpengalaman lebih dari 20 tahun dalam industri ini.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="umum">
+                    <div class="faq-question">
+                        <h3>Di mana lokasi Bhineka Cipta Kreasi?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Kantor cabang kami berlokasi di Jl. Raya Prompong RT 04/04 Kutasari, Kec. Baturaden, Kab. Banyumas, Jawa Tengah. Kami melayani pengiriman ke seluruh Indonesia.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="umum">
+                    <div class="faq-question">
+                        <h3>Apa jam operasional Bhineka Cipta Kreasi?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Kami buka setiap:</p>
+                        <ul>
+                            <li>Senin - Jumat: 08.00 - 17.00 WIB</li>
+                            <li>Sabtu: 08.00 - 12.00 WIB</li>
+                            <li>Minggu & Hari Libur: Tutup</li>
+                        </ul>
+                        <p>Untuk pemesanan online melalui website, Anda dapat melakukan pemesanan kapan saja 24/7.</p>
+                    </div>
+                </div>
+
+                <!-- Pemesanan -->
+                <div class="faq-item" data-category="pemesanan">
+                    <div class="faq-question">
+                        <h3>Bagaimana cara memesan produk?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Anda dapat memesan melalui beberapa cara:</p>
+                        <ol>
+                            <li><strong>Website:</strong> Pilih produk, tambahkan ke keranjang, lalu checkout</li>
+                            <li><strong>WhatsApp:</strong> Hubungi kami di (0281) 6572506</li>
+                            <li><strong>Email:</strong> Kirim detail pesanan ke purwokerto@karyasatria.com</li>
+                            <li><strong>Datang Langsung:</strong> Kunjungi kantor kami</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="pemesanan">
+                    <div class="faq-question">
+                        <h3>Apakah ada minimum order?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Minimum order berbeda-beda tergantung jenis produk:</p>
+                        <ul>
+                            <li><strong>Banner & Spanduk:</strong> Tidak ada minimum order</li>
+                            <li><strong>Kartu Undangan:</strong> Minimal 50 pcs</li>
+                            <li><strong>Lanyard:</strong> Minimal 50 pcs</li>
+                            <li><strong>Merchandise:</strong> Minimal 25 pcs (tergantung jenis)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="pemesanan">
+                    <div class="faq-question">
+                        <h3>Berapa lama waktu produksi?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Waktu produksi tergantung jenis produk dan jumlah pesanan:</p>
+                        <ul>
+                            <li><strong>Banner & Spanduk:</strong> 1-3 hari kerja</li>
+                            <li><strong>Kartu Undangan:</strong> 3-5 hari kerja</li>
+                            <li><strong>Lanyard:</strong> 5-7 hari kerja</li>
+                            <li><strong>Merchandise Custom:</strong> 7-14 hari kerja</li>
+                            <li><strong>Pesanan Urgent:</strong> Tersedia dengan biaya tambahan</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="pemesanan">
+                    <div class="faq-question">
+                        <h3>Bisakah membatalkan pesanan?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Pembatalan pesanan hanya dapat dilakukan jika:</p>
+                        <ul>
+                            <li>Pesanan belum memasuki tahap produksi</li>
+                            <li>Maksimal 2 jam setelah konfirmasi pembayaran</li>
+                            <li>Biaya admin 5% akan dikenakan</li>
+                        </ul>
+                        <p>Untuk pesanan yang sudah diproduksi, pembatalan tidak dapat dilakukan.</p>
+                    </div>
+                </div>
+
+                <!-- Pembayaran -->
+                <div class="faq-item" data-category="pembayaran">
+                    <div class="faq-question">
+                        <h3>Metode pembayaran apa saja yang tersedia?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Kami menerima berbagai metode pembayaran:</p>
+                        <ul>
+                            <li><strong>Transfer Bank:</strong> BCA, Mandiri, BNI, BRI</li>
+                            <li><strong>E-Wallet:</strong> OVO, GoPay, DANA, ShopeePay</li>
+                            <li><strong>Kartu Kredit/Debit:</strong> Visa, Mastercard</li>
+                            <li><strong>COD:</strong> Untuk area Purwokerto dan sekitarnya</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="pembayaran">
+                    <div class="faq-question">
+                        <h3>Berapa lama konfirmasi pembayaran diproses?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Konfirmasi pembayaran diproses dalam waktu:</p>
+                        <ul>
+                            <li><strong>Transfer Bank:</strong> 1-2 jam pada jam kerja</li>
+                            <li><strong>E-Wallet & Kartu Kredit:</strong> Otomatis/real-time</li>
+                            <li><strong>Di luar jam kerja:</strong> Akan dikonfirmasi pada hari kerja berikutnya</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="pembayaran">
+                    <div class="faq-question">
+                        <h3>Apakah bisa melakukan pembayaran secara bertahap?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ya, untuk pesanan dengan nilai di atas Rp 5.000.000, kami menyediakan sistem pembayaran bertahap:</p>
+                        <ul>
+                            <li>DP 50% saat pemesanan</li>
+                            <li>Pelunasan 50% sebelum pengiriman</li>
+                        </ul>
+                        <p>Silakan hubungi customer service untuk informasi lebih lanjut.</p>
+                    </div>
+                </div>
+
+                <!-- Pengiriman -->
+                <div class="faq-item" data-category="pengiriman">
+                    <div class="faq-question">
+                        <h3>Apakah ada biaya pengiriman?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Biaya pengiriman dihitung berdasarkan:</p>
+                        <ul>
+                            <li>Berat dan volume barang</li>
+                            <li>Lokasi tujuan pengiriman</li>
+                            <li>Jasa ekspedisi yang dipilih</li>
+                        </ul>
+                        <p><strong>Gratis Ongkir:</strong> Untuk pembelian di atas Rp 1.000.000 ke wilayah Jawa.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="pengiriman">
+                    <div class="faq-question">
+                        <h3>Ekspedisi apa yang digunakan?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Kami bekerja sama dengan berbagai ekspedisi terpercaya:</p>
+                        <ul>
+                            <li>JNE (Reguler & YES)</li>
+                            <li>J&T Express</li>
+                            <li>SiCepat</li>
+                            <li>Anteraja</li>
+                            <li>Kargo untuk barang besar</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="pengiriman">
+                    <div class="faq-question">
+                        <h3>Bagaimana cara tracking pesanan?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Anda dapat tracking pesanan melalui:</p>
+                        <ol>
+                            <li>Nomor resi yang dikirim via email/WhatsApp</li>
+                            <li>Website ekspedisi yang digunakan</li>
+                            <li>Halaman "Pesanan Saya" di website kami</li>
+                            <li>Hubungi customer service kami</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="pengiriman">
+                    <div class="faq-question">
+                        <h3>Apa yang harus dilakukan jika barang rusak saat diterima?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Jika barang rusak saat diterima:</p>
+                        <ol>
+                            <li>Foto barang dan kemasannya sebagai bukti</li>
+                            <li>Laporkan ke customer service maksimal 2x24 jam</li>
+                            <li>Sertakan nomor pesanan dan bukti foto</li>
+                            <li>Tim kami akan memverifikasi dan mengirim pengganti</li>
+                        </ol>
+                        <p><strong>Penting:</strong> Pastikan untuk memeriksa kondisi paket sebelum menerima dari kurir.</p>
+                    </div>
+                </div>
+
+                <!-- Produk -->
+                <div class="faq-item" data-category="produk">
+                    <div class="faq-question">
+                        <h3>Apakah bisa custom desain sendiri?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ya, kami menerima custom desain dengan ketentuan:</p>
+                        <ul>
+                            <li>File desain dalam format AI, PSD, PDF, atau CorelDraw</li>
+                            <li>Resolusi minimal 300 dpi</li>
+                            <li>Mode warna CMYK untuk hasil cetak optimal</li>
+                            <li>Desain sudah final dan siap produksi</li>
+                        </ul>
+                        <p>Jika tidak memiliki desain, kami juga menyediakan jasa desain dengan biaya tambahan.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="produk">
+                    <div class="faq-question">
+                        <h3>Apakah ada layanan desain gratis?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ya, kami menyediakan layanan desain gratis untuk:</p>
+                        <ul>
+                            <li>Pesanan banner/spanduk di atas 10m²</li>
+                            <li>Kartu undangan minimal 100 pcs</li>
+                            <li>Merchandise minimal 100 pcs</li>
+                        </ul>
+                        <p>Revisi maksimal 3x. Untuk pesanan di bawah minimum tersebut, dikenakan biaya desain mulai dari Rp 50.000.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="produk">
+                    <div class="faq-question">
+                        <h3>Material apa saja yang tersedia untuk banner?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Kami menyediakan berbagai jenis material banner:</p>
+                        <ul>
+                            <li><strong>Flexi Korea:</strong> Material standar, ekonomis, untuk indoor/outdoor</li>
+                            <li><strong>Flexi China:</strong> Harga lebih ekonomis, cocok untuk event singkat</li>
+                            <li><strong>Albatros:</strong> Premium, tahan lama, tidak mudah sobek</li>
+                            <li><strong>Vinyl:</strong> Untuk sticker, cutting sticker</li>
+                            <li><strong>MMT (Luster):</strong> Glossy, untuk indoor</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="produk">
+                    <div class="faq-question">
+                        <h3>Apakah warna cetak sama dengan tampilan di layar?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Warna cetak mungkin sedikit berbeda dengan tampilan di layar karena:</p>
+                        <ul>
+                            <li>Perbedaan mode warna (RGB di layar vs CMYK pada cetakan)</li>
+                            <li>Kalibrasi monitor yang berbeda</li>
+                            <li>Jenis material yang digunakan</li>
+                        </ul>
+                        <p>Untuk hasil optimal, pastikan desain menggunakan mode CMYK. Jika membutuhkan warna yang sangat presisi, kami menyarankan untuk melakukan proof print terlebih dahulu.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="produk">
+                    <div class="faq-question">
+                        <h3>Apakah ada garansi untuk produk?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Kami memberikan garansi untuk:</p>
+                        <ul>
+                            <li>Kesalahan cetak dari pihak kami (warna, ukuran, atau desain)</li>
+                            <li>Cacat produksi (sobek, tidak rata, dll)</li>
+                            <li>Barang rusak saat pengiriman</li>
+                        </ul>
+                        <p>Garansi <strong>TIDAK berlaku</strong> untuk:</p>
+                        <ul>
+                            <li>Kesalahan file dari customer</li>
+                            <li>Perbedaan warna akibat mode RGB</li>
+                            <li>Kerusakan setelah pemakaian</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Still Have Questions -->
+            <div class="contact-cta">
+                <div class="cta-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h2>Masih Punya Pertanyaan?</h2>
+                <p>Jangan ragu untuk menghubungi tim customer service kami. Kami siap membantu Anda!</p>
+                <div class="cta-buttons">
+                    <a href="kontak.html" class="btn-primary">
+                        <i class="fas fa-phone"></i>
+                        Hubungi Kami
+                    </a>
+                    <a href="https://wa.me/6281234567890" target="_blank" class="btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                        Chat WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <i class="fas fa-print"></i>
+                        <span>Bhineka Cipta Kreasi</span>
+                    </div>
+                    <p>Solusi terpercaya untuk semua kebutuhan percetakan dan periklanan Anda sejak 20+ tahun.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Kategori</h4>
+                    <ul>
+                        <li><a href="#">Banner & Spanduk</a></li>
+                        <li><a href="#">Kartu Undangan</a></li>
+                        <li><a href="#">Merchandise</a></li>
+                        <li><a href="#">Alat Event</a></li>
+                        <li><a href="#">Media Digital</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Layanan Kami</h4>
+                    <ul>
+                        <li><a href="#">Desain Grafis</a></li>
+                        <li><a href="#">Cetak Digital</a></li>
+                        <li><a href="#">Cetak Offset</a></li>
+                        <li><a href="#">Custom Order</a></li>
+                        <li><a href="#">Konsultasi</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Hubungi Kami</h4>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>(0281) 6572506</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>purwokerto@karyasatria.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Jl. Raya Prompong RT 04/04, Baturaden</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Senin - Sabtu: 08.00 - 17.00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bhineka Cipta Kreasi. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="privasi.html">Kebijakan Privasi</a>
+                    <a href="syarat.html">Syarat & Ketentuan</a>
+                    <a href="faq.html">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="faq.js"></script>
+</body>
+</html>

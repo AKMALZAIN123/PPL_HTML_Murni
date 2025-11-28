@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keranjang Belanja - Bhineka Cipta Kreasi</title>
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-print"></i>
+                    <span>Bhineka Cipta Kreasi</span>
+                </a>
+                
+                <div class="nav-links" id="navLinks">
+                    <a href="index.html" class="active">Beranda</a>
+                    <a href="produk.html">Produk</a>
+                    <a href="about.html">Tentang</a>
+                    <a href="kontak.html">Kontak</a>
+                </div>
+                
+                <div class="nav-actions">
+                    <button class="icon-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <a href="cart.html" class="icon-btn cart-btn active">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge" id="cartBadge">3</span>
+                    </a>
+                    <a href="loginpage.html" class="icon-btn">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <div class="breadcrumb-items">
+                <a href="index.html">
+                    <i class="fas fa-home"></i>
+                    Beranda
+                </a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Keranjang Belanja</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Section -->
+    <section class="cart-section">
+        <div class="container">
+            <div class="cart-header">
+                <h1>Keranjang Belanja</h1>
+                <p class="cart-count" id="cartCount">3 produk</p>
+            </div>
+
+            <div class="cart-layout">
+                <!-- Cart Items -->
+                <div class="cart-items-section">
+                    <div id="cartItemsContainer">
+                        <!-- Cart items will be inserted here by JavaScript -->
+                    </div>
+
+                    <!-- Empty State -->
+                    <div class="empty-cart" id="emptyCart" style="display: none;">
+                        <div class="empty-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h2>Keranjang Belanja Kosong</h2>
+                        <p>Belum ada produk di keranjang Anda. Yuk mulai belanja sekarang!</p>
+                        <a href="products.html" class="btn-primary">
+                            <i class="fas fa-shopping-bag"></i>
+                            Mulai Belanja
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="order-summary" id="orderSummary">
+                    <h3>Ringkasan Pesanan</h3>
+                    
+                    <div class="summary-row">
+                        <span>Subtotal <span class="item-count" id="summaryItemCount">(3 produk)</span></span>
+                        <span class="summary-value" id="summarySubtotal">Rp 0</span>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Biaya Pengiriman</span>
+                        <span class="summary-value" id="summaryShipping">Rp 15.000</span>
+                    </div>
+
+                    <div class="summary-divider"></div>
+
+                    <div class="summary-total">
+                        <span>Total</span>
+                        <span class="total-value" id="summaryTotal">Rp 0</span>
+                    </div>
+
+                    <button class="btn-checkout" id="btnCheckout">
+                        <i class="fas fa-credit-card"></i>
+                        Lanjutkan ke Pembayaran
+                    </button>
+
+                    <a href="products.html" class="btn-continue">
+                        <i class="fas fa-arrow-left"></i>
+                        Lanjut Belanja
+                    </a>
+
+                    <div class="summary-info">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Transaksi aman dan terpercaya</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <i class="fas fa-print"></i>
+                        <span>Bhineka Cipta Kreasi</span>
+                    </div>
+                    <p>Solusi terpercaya untuk semua kebutuhan percetakan dan periklanan Anda sejak 20+ tahun.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Kategori</h4>
+                    <ul>
+                        <li><a href="#">Banner & Spanduk</a></li>
+                        <li><a href="#">Kartu Undangan</a></li>
+                        <li><a href="#">Merchandise</a></li>
+                        <li><a href="#">Alat Event</a></li>
+                        <li><a href="#">Media Digital</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Layanan Kami</h4>
+                    <ul>
+                        <li><a href="#">Desain Grafis</a></li>
+                        <li><a href="#">Cetak Digital</a></li>
+                        <li><a href="#">Cetak Offset</a></li>
+                        <li><a href="#">Custom Order</a></li>
+                        <li><a href="#">Konsultasi</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Hubungi Kami</h4>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>(0281) 6572506</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>purwokerto@karyasatria.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Jl. Raya Prompong RT 04/04, Baturaden</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Senin - Sabtu: 08.00 - 17.00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bhineka Cipta Kreasi. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="privasi.html">Kebijakan Privasi</a>
+                    <a href="syarat.html">Syarat & Ketentuan</a>
+                    <a href="faq.html">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal" id="deleteModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <h3>Hapus Produk?</h3>
+            <p>Apakah Anda yakin ingin menghapus produk ini dari keranjang?</p>
+            <div class="modal-actions">
+                <button class="btn-cancel" id="btnCancelDelete">Batal</button>
+                <button class="btn-delete" id="btnConfirmDelete">Hapus</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="cart.js"></script>
+</body>
+</html>
