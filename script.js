@@ -48,15 +48,6 @@ addToCartBtns.forEach(btn => {
     });
 });
 
-// Newsletter Form
-const newsletterForm = document.querySelector('.newsletter-form');
-newsletterForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const email = newsletterForm.querySelector('input').value;
-    showNotification('Terima kasih! Email Anda telah terdaftar.', 'success');
-    newsletterForm.reset();
-});
-
 // Smooth Scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -80,13 +71,33 @@ productCards.forEach(card => {
     });
 });
 
-// Collection Card Click
-const collectionCards = document.querySelectorAll('.collection-card');
-collectionCards.forEach(card => {
-    card.addEventListener('click', () => {
-        // Navigate to collection page
-        window.location.href = '/products';
+// Gallery Animation on Scroll
+const galleryItems = document.querySelectorAll('.gallery-item');
+
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '0';
+            entry.target.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                entry.target.style.transition = 'all 0.6s ease';
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }, 100);
+            
+            observer.unobserve(entry.target);
+        }
     });
+}, observerOptions);
+
+galleryItems.forEach(item => {
+    observer.observe(item);
 });
 
 // Notification Function
@@ -169,7 +180,7 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Scroll to top button (optional)
+// Scroll to top button
 window.addEventListener('scroll', () => {
     const scrollBtn = document.querySelector('.scroll-to-top');
     if (window.pageYOffset > 300) {
@@ -230,4 +241,7 @@ window.addEventListener('load', () => {
         document.body.style.transition = 'opacity 0.5s';
         document.body.style.opacity = '1';
     }, 100);
+    
+    // Log gallery items
+    console.log(`Gallery loaded with ${galleryItems.length} items`);
 });
