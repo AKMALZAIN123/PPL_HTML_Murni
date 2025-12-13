@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riwayat Pesanan - Bhineka Cipta Kreasi</title>
+    <link rel="stylesheet" href="history.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-print"></i>
+                    <span>Bhineka Cipta Kreasi</span>
+                </a>
+                
+                <div class="nav-links">
+                    <a href="index.html">Beranda</a>
+                    <a href="products.html">Produk</a>
+                    <a href="order-history.html" class="active">Pesanan Saya</a>
+                    <a href="about.html">Tentang</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-icon">
+                    <i class="fas fa-history"></i>
+                </div>
+                <div class="header-text">
+                    <h1>Riwayat Pesanan</h1>
+                    <p>Kelola dan pantau semua pesanan Anda</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Summary Cards -->
+            <div class="summary-cards" id="summaryCards">
+                <div class="summary-card">
+                    <div class="summary-icon" style="background: #dbeafe;">
+                        <i class="fas fa-clock" style="color: #2563eb;"></i>
+                    </div>
+                    <div class="summary-info">
+                        <h3 id="pendingCount">0</h3>
+                        <p>Menunggu Pembayaran</p>
+                    </div>
+                </div>
+
+                <div class="summary-card">
+                    <div class="summary-icon" style="background: #fef3c7;">
+                        <i class="fas fa-cog" style="color: #f59e0b;"></i>
+                    </div>
+                    <div class="summary-info">
+                        <h3 id="processCount">0</h3>
+                        <p>Sedang Diproses</p>
+                    </div>
+                </div>
+
+                <div class="summary-card">
+                    <div class="summary-icon" style="background: #d1fae5;">
+                        <i class="fas fa-check-circle" style="color: #10b981;"></i>
+                    </div>
+                    <div class="summary-info">
+                        <h3 id="completedCount">0</h3>
+                        <p>Pesanan Selesai</p>
+                    </div>
+                </div>
+
+                <div class="summary-card">
+                    <div class="summary-icon" style="background: #e5e7eb;">
+                        <i class="fas fa-box" style="color: #6b7280;"></i>
+                    </div>
+                    <div class="summary-info">
+                        <h3 id="totalCount">0</h3>
+                        <p>Total Pesanan</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Orders Section -->
+            <div class="orders-section">
+                <div class="section-header">
+                    <h2>Daftar Pesanan</h2>
+                </div>
+
+                <!-- Order List -->
+                <div id="ordersList" class="orders-list">
+                    <!-- Orders will be rendered here -->
+                </div>
+
+                <!-- Empty State -->
+                <div class="empty-state" id="emptyState" style="display: none;">
+                    <div class="empty-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <h3>Belum Ada Pesanan</h3>
+                    <p>Anda belum memiliki riwayat pesanan</p>
+                    <a href="products.html" class="btn btn-primary">
+                        <i class="fas fa-shopping-cart"></i>
+                        Mulai Belanja
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <i class="fas fa-print"></i>
+                        <span>Bhineka Cipta Kreasi</span>
+                    </div>
+                    <p>Solusi terpercaya untuk semua kebutuhan percetakan dan periklanan Anda sejak 20+ tahun.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Kategori</h4>
+                    <ul>
+                        <li><a href="#">Banner & Spanduk</a></li>
+                        <li><a href="#">Kartu Undangan</a></li>
+                        <li><a href="#">Merchandise</a></li>
+                        <li><a href="#">Alat Event</a></li>
+                        <li><a href="#">Media Digital</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Layanan Kami</h4>
+                    <ul>
+                        <li><a href="#">Desain Grafis</a></li>
+                        <li><a href="#">Cetak Digital</a></li>
+                        <li><a href="#">Cetak Offset</a></li>
+                        <li><a href="#">Custom Order</a></li>
+                        <li><a href="#">Konsultasi</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Hubungi Kami</h4>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>(0281) 6572506</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>purwokerto@karyasatria.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Jl. Raya Prompong RT 04/04, Baturaden</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Senin - Sabtu: 08.00 - 17.00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bhineka Cipta Kreasi. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="privasi.html">Kebijakan Privasi</a>
+                    <a href="syarat.html">Syarat & Ketentuan</a>
+                    <a href="faq.html">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="history.js"></script>
+</body>
+</html>
