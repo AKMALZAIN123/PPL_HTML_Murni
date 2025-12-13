@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Saya - Bhineka Cipta Kreasi</title>
+    <link rel="stylesheet" href="profil.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-print"></i>
+                    <span>Bhineka Cipta Kreasi</span>
+                </a>
+                
+                <div class="nav-links">
+                    <a href="index.html">Beranda</a>
+                    <a href="products.html">Produk</a>
+                    <a href="order-history.html">Pesanan Saya</a>
+                    <a href="profile.html" class="active">Profil</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="profile-layout">
+                <!-- Sidebar -->
+                <aside class="profile-sidebar">
+                    <!-- User Card -->
+                    <div class="user-card">
+                        <div class="user-avatar">
+                            <img src="https://ui-avatars.com/api/?name=John+Doe&background=2563eb&color=fff&size=120" alt="Avatar" id="avatarImage">
+                            <button class="avatar-edit" onclick="changeAvatar()">
+                                <i class="fas fa-camera"></i>
+                            </button>
+                        </div>
+                        <h3 id="userName">John Doe</h3>
+                        <p id="userEmail">john.doe@example.com</p>
+                    </div>
+
+                    <!-- Navigation Menu -->
+                    <nav class="sidebar-nav">
+                        <a href="javascript:void(0)" class="nav-item active" onclick="switchSection('profile')">
+                            <div class="nav-icon">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <span>Profil Saya</span>
+                            <i class="fas fa-chevron-right arrow"></i>
+                        </a>
+                        <a href="order-history.html" class="nav-item">
+                            <div class="nav-icon">
+                                <i class="fas fa-history"></i>
+                            </div>
+                            <span>Riwayat Pesanan</span>
+                            <i class="fas fa-chevron-right arrow"></i>
+                        </a>
+                        <a href="javascript:void(0)" class="nav-item" onclick="switchSection('address')">
+                            <div class="nav-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <span>Alamat</span>
+                            <i class="fas fa-chevron-right arrow"></i>
+                        </a>
+                        <a href="javascript:void(0)" class="nav-item" onclick="switchSection('password')">
+                            <div class="nav-icon">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <span>Keamanan</span>
+                            <i class="fas fa-chevron-right arrow"></i>
+                        </a>
+                        <a href="javascript:void(0)" class="nav-item" onclick="switchSection('settings')">
+                            <div class="nav-icon">
+                                <i class="fas fa-bell"></i>
+                            </div>
+                            <span>Notifikasi</span>
+                            <i class="fas fa-chevron-right arrow"></i>
+                        </a>
+                        <a href="javascript:void(0)" class="nav-item logout" onclick="handleLogout()">
+                            <div class="nav-icon">
+                                <i class="fas fa-sign-out-alt"></i>
+                            </div>
+                            <span>Keluar</span>
+                            <i class="fas fa-chevron-right arrow"></i>
+                        </a>
+                    </nav>
+                </aside>
+
+                <!-- Content Area -->
+                <div class="profile-content">
+                    <!-- Profile Section -->
+                    <section id="section-profile" class="content-section active">
+                        <div class="section-header">
+                            <h2>Informasi Profil</h2>
+                        </div>
+
+                        <form class="form-modern" id="profileForm" onsubmit="handleProfileSubmit(event)">
+                            <div class="form-grid">
+                                <div class="input-group">
+                                    <label>Nama Lengkap</label>
+                                    <input type="text" id="fullName" value="John Doe" required>
+                                </div>
+                                <div class="input-group">
+                                    <label>Nomor Telepon</label>
+                                    <input type="tel" id="phone" value="081234567890" required>
+                                </div>
+                            </div>
+
+                            <div class="form-grid">
+                                <div class="input-group">
+                                    <label>Email</label>
+                                    <input type="email" id="email" value="john.doe@example.com" required>
+                                </div>
+                                <div class="input-group">
+                                    <label>Tanggal Lahir</label>
+                                    <input type="date" id="birthdate" value="1990-01-01">
+                                </div>
+                            </div>
+
+                            <div class="input-group">
+                                <label>Nama Perusahaan <span class="optional">(Opsional)</span></label>
+                                <input type="text" id="company" placeholder="PT. Example Indonesia">
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-secondary" onclick="cancelEdit()">
+                                    Batal
+                                </button>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-save"></i>
+                                    Simpan Perubahan
+                                </button>
+                            </div>
+                        </form>
+                    </section>
+
+                    <!-- Address Section -->
+                    <section id="section-address" class="content-section">
+                        <div class="section-header">
+                            <h2>Alamat Pengiriman</h2>
+                            <button class="btn btn-primary btn-sm" onclick="addNewAddress()">
+                                <i class="fas fa-plus"></i>
+                                Tambah Alamat
+                            </button>
+                        </div>
+
+                        <div class="address-grid" id="addressList">
+                            <!-- Addresses will be rendered here -->
+                        </div>
+                    </section>
+
+                    <!-- Password Section -->
+                    <section id="section-password" class="content-section">
+                        <div class="section-header">
+                            <h2>Ubah Password</h2>
+                        </div>
+
+                        <form class="form-modern" id="passwordForm" onsubmit="handlePasswordSubmit(event)">
+                            <div class="input-group">
+                                <label>Password Saat Ini</label>
+                                <input type="password" id="currentPassword" required>
+                            </div>
+
+                            <div class="input-group">
+                                <label>Password Baru</label>
+                                <input type="password" id="newPassword" required>
+                            </div>
+
+                            <div class="input-group">
+                                <label>Konfirmasi Password Baru</label>
+                                <input type="password" id="confirmPassword" required>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-key"></i>
+                                    Ubah Password
+                                </button>
+                            </div>
+                        </form>
+                    </section>
+
+                    <!-- Settings Section -->
+                    <section id="section-settings" class="content-section">
+                        <div class="section-header">
+                            <h2>Pengaturan Notifikasi</h2>
+                        </div>
+
+                        <div class="settings-grid">
+                            <div class="setting-card">
+                                <div class="setting-info">
+                                    <div class="setting-icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <h4>Notifikasi Email</h4>
+                                        <p>Terima update pesanan via email</p>
+                                    </div>
+                                </div>
+                                <label class="toggle">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="setting-card">
+                                <div class="setting-info">
+                                    <div class="setting-icon">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </div>
+                                    <div>
+                                        <h4>Notifikasi WhatsApp</h4>
+                                        <p>Terima notifikasi via WhatsApp</p>
+                                    </div>
+                                </div>
+                                <label class="toggle">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="setting-card">
+                                <div class="setting-info">
+                                    <div class="setting-icon">
+                                        <i class="fas fa-newspaper"></i>
+                                    </div>
+                                    <div>
+                                        <h4>Newsletter</h4>
+                                        <p>Terima tips dan artikel menarik</p>
+                                    </div>
+                                </div>
+                                <label class="toggle">
+                                    <input type="checkbox">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <i class="fas fa-print"></i>
+                        <span>Bhineka Cipta Kreasi</span>
+                    </div>
+                    <p>Solusi terpercaya untuk semua kebutuhan percetakan dan periklanan Anda sejak 20+ tahun.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Kategori</h4>
+                    <ul>
+                        <li><a href="#">Banner & Spanduk</a></li>
+                        <li><a href="#">Kartu Undangan</a></li>
+                        <li><a href="#">Merchandise</a></li>
+                        <li><a href="#">Alat Event</a></li>
+                        <li><a href="#">Media Digital</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Layanan Kami</h4>
+                    <ul>
+                        <li><a href="#">Desain Grafis</a></li>
+                        <li><a href="#">Cetak Digital</a></li>
+                        <li><a href="#">Cetak Offset</a></li>
+                        <li><a href="#">Custom Order</a></li>
+                        <li><a href="#">Konsultasi</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Hubungi Kami</h4>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>(0281) 6572506</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>purwokerto@karyasatria.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Jl. Raya Prompong RT 04/04, Baturaden</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Senin - Sabtu: 08.00 - 17.00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bhineka Cipta Kreasi. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="privasi.html">Kebijakan Privasi</a>
+                    <a href="syarat.html">Syarat & Ketentuan</a>
+                    <a href="faq.html">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="profil.js"></script>
+</body>
+</html>
