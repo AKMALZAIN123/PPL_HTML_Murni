@@ -1,12 +1,9 @@
-// ===== DATA SAMPLE =====
-// Ganti dengan fetch dari API/Database
-const sampleOrders = [
+// ===== SAMPLE DATA - HANYA PESANAN YANG SUDAH DIBAYAR =====
+const orders = [
     {
         orderNumber: 'ORD-2024-001234',
-        date: '2024-12-10 14:30',
-        paymentStatus: 'paid',
-        productionStatus: 'process',
-        estimatedDays: '2-3 hari',
+        date: '10 Desember 2024, 14:30',
+        productionStatus: 'Sedang Dikerjakan (2-3 hari)',
         items: [
             {
                 name: 'Banner X Premium',
@@ -26,28 +23,9 @@ const sampleOrders = [
         total: 600000
     },
     {
-        orderNumber: 'ORD-2024-001233',
-        date: '2024-12-08 10:15',
-        paymentStatus: 'pending',
-        productionStatus: null,
-        estimatedDays: null,
-        items: [
-            {
-                name: 'Lanyard Custom Logo',
-                specs: 'Print sublim, minimal order 50 pcs',
-                qty: 50,
-                price: 15000,
-                image: 'https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=100'
-            }
-        ],
-        total: 750000
-    },
-    {
         orderNumber: 'ORD-2024-001232',
-        date: '2024-12-05 16:45',
-        paymentStatus: 'paid',
-        productionStatus: 'process',
-        estimatedDays: '1-2 hari',
+        date: '5 Desember 2024, 16:45',
+        productionStatus: 'Sedang Dikerjakan (1-2 hari)',
         items: [
             {
                 name: 'Roll Up Banner',
@@ -58,10 +36,30 @@ const sampleOrders = [
             }
         ],
         total: 675000
+    },
+    {
+        orderNumber: 'ORD-2024-001231',
+        date: '2 Desember 2024, 10:15',
+        productionStatus: 'Sedang Dikerjakan (3-4 hari)',
+        items: [
+            {
+                name: 'Booth Promosi 3x3m',
+                specs: 'Tenda promosi dengan custom print',
+                qty: 1,
+                price: 2500000,
+                image: 'https://images.unsplash.com/photo-1588282322673-c31965a75c3e?w=100'
+            }
+        ],
+        total: 2500000
     }
 ];
 
-// ===== UTILITY FUNCTIONS =====
+// ===== INIT =====
+document.addEventListener('DOMContentLoaded', function() {
+    renderOrders();
+});
+
+// ===== FORMAT CURRENCY =====
 function formatCurrency(amount) {
     return new Intl.NumberFormat('id-ID', {
         style: 'currency',
@@ -70,110 +68,38 @@ function formatCurrency(amount) {
     }).format(amount);
 }
 
-function calculateSummary(orders) {
-    return {
-        pending: orders.filter(o => o.paymentStatus === 'pending').length,
-        process: orders.filter(o => o.productionStatus === 'process').length,
-        completed: orders.filter(o => o.paymentStatus === 'paid' && o.productionStatus !== 'process').length,
-        total: orders.length
-    };
-}
-
-// ===== RENDER FUNCTIONS =====
-function renderSummary(orders) {
-    const summary = calculateSummary(orders);
-    
-    document.getElementById('pendingCount').textContent = summary.pending;
-    document.getElementById('processCount').textContent = summary.process;
-    document.getElementById('completedCount').textContent = summary.completed;
-    document.getElementById('totalCount').textContent = summary.total;
-}
-
-function renderPaymentBadge(status) {
-    if (status === 'paid') {
-        return `
-            <span class="badge badge-success">
-                <i class="fas fa-check-circle"></i>
-                Pembayaran Lunas
-            </span>
-        `;
-    } else {
-        return `
-            <span class="badge badge-warning">
-                <i class="fas fa-clock"></i>
-                Menunggu Pembayaran
-            </span>
-        `;
-    }
-}
-
-function renderProductionBadge(status, estimatedDays) {
-    if (status === 'process') {
-        return `
-            <span class="badge badge-primary">
-                <i class="fas fa-cog fa-spin"></i>
-                Sedang Dikerjakan (${estimatedDays})
-            </span>
-        `;
-    }
-    return '';
-}
-
+// ===== RENDER ORDER ITEM =====
 function renderOrderItem(item) {
     return `
         <div class="order-item">
             <img src="${item.image}" alt="${item.name}" class="item-image">
-            <div class="item-info">
-                <h4>${item.name}</h4>
-                <p>${item.specs}</p>
+            <div class="item-details">
+                <div class="item-name">${item.name}</div>
+                <div class="item-specs">${item.specs}</div>
             </div>
-            <div class="item-price">
+            <div class="item-pricing">
                 <div class="item-qty">${item.qty}x</div>
-                <div class="item-total">${formatCurrency(item.price * item.qty)}</div>
+                <div class="item-price">${formatCurrency(item.price * item.qty)}</div>
             </div>
         </div>
     `;
 }
 
-function renderActionButtons(order) {
-    let buttons = '';
-    
-    if (order.paymentStatus === 'pending') {
-        buttons += `
-            <button class="btn btn-primary" onclick="handlePayNow('${order.orderNumber}')">
-                <i class="fas fa-credit-card"></i>
-                Bayar Sekarang
-            </button>
-        `;
-    }
-    
-    buttons += `
-        <button class="btn btn-outline" onclick="handleViewDetail('${order.orderNumber}')">
-            <i class="fas fa-eye"></i>
-            Lihat Detail
-        </button>
-    `;
-    
-    return buttons;
-}
-
+// ===== RENDER ORDER CARD =====
 function renderOrderCard(order) {
     return `
         <div class="order-card">
             <div class="order-header">
-                <div class="order-meta">
-                    <div class="order-number">
-                        <i class="fas fa-receipt"></i>
-                        ${order.orderNumber}
-                    </div>
+                <div class="order-info">
+                    <div class="order-number">${order.orderNumber}</div>
                     <div class="order-date">
                         <i class="far fa-calendar"></i>
                         ${order.date}
                     </div>
                 </div>
-                <div class="order-badges">
-                    ${renderPaymentBadge(order.paymentStatus)}
-                    ${renderProductionBadge(order.productionStatus, order.estimatedDays)}
+                <div class="status-badge">
+                    <i class="fas fa-cog fa-spin"></i>
+                    ${order.productionStatus}
                 </div>
             </div>
 
@@ -182,24 +108,28 @@ function renderOrderCard(order) {
             </div>
 
             <div class="order-footer">
-                <div class="order-total">
+                <div class="order-total-section">
                     <span class="total-label">Total Pembayaran</span>
                     <span class="total-amount">${formatCurrency(order.total)}</span>
                 </div>
-                <div class="order-actions">
-                    ${renderActionButtons(order)}
+                <div class="order-action">
+                    <button class="btn-outline" onclick="viewOrderDetail('${order.orderNumber}')">
+                        <i class="fas fa-eye"></i>
+                        Lihat Detail
+                    </button>
                 </div>
             </div>
         </div>
     `;
 }
 
-function renderOrders(orders) {
+// ===== RENDER ALL ORDERS =====
+function renderOrders() {
     const ordersList = document.getElementById('ordersList');
     const emptyState = document.getElementById('emptyState');
 
     if (orders.length === 0) {
-        ordersList.innerHTML = '';
+        ordersList.style.display = 'none';
         emptyState.style.display = 'block';
         return;
     }
@@ -208,91 +138,27 @@ function renderOrders(orders) {
     ordersList.innerHTML = orders.map(order => renderOrderCard(order)).join('');
 }
 
-// ===== EVENT HANDLERS =====
-function handleViewDetail(orderNumber) {
-    // Redirect ke halaman detail order
-    // window.location.href = `/order/detail/${orderNumber}`;
-    
-    alert(`Detail Pesanan: ${orderNumber}\n\nHalaman detail akan segera tersedia.`);
+// ===== VIEW ORDER DETAIL =====
+function viewOrderDetail(orderNumber) {
+    alert('Detail Pesanan: ' + orderNumber + '\n\nHalaman detail akan segera tersedia.');
+    // window.location.href = '/order/detail/' + orderNumber;
 }
 
-function handlePayNow(orderNumber) {
-    // Integrasi dengan Midtrans Snap
-    // const order = orders.find(o => o.orderNumber === orderNumber);
-    
-    alert(`Pembayaran untuk: ${orderNumber}\n\nAnda akan diarahkan ke Midtrans.`);
-    
-    // Example Midtrans Integration:
-    /*
-    snap.pay(order.snapToken, {
-        onSuccess: function(result) {
-            window.location.href = `/order/success/${orderNumber}`;
-        },
-        onPending: function(result) {
-            alert('Pembayaran pending');
-        },
-        onError: function(result) {
-            alert('Pembayaran gagal');
-        }
-    });
-    */
-}
-
-// ===== API FUNCTIONS =====
-async function fetchOrders() {
+// ===== FETCH FROM API (Optional) =====
+async function fetchOrdersFromAPI() {
     try {
-        // Uncomment untuk fetch dari API
-        /*
-        const response = await fetch('/api/orders', {
-            method: 'GET',
-            headers: {
-                'Authorization': 'Bearer ' + localStorage.getItem('token'),
-                'Content-Type': 'application/json'
-            }
-        });
-
-        if (!response.ok) {
-            throw new Error('Failed to fetch orders');
-        }
-
-        const data = await response.json();
-        return data.orders;
-        */
-
-        // Menggunakan sample data
-        return sampleOrders;
+        // Fetch only paid orders
+        // const response = await fetch('/api/orders?status=paid', {
+        //     headers: {
+        //         'Authorization': 'Bearer ' + localStorage.getItem('token')
+        //     }
+        // });
+        // const data = await response.json();
+        // return data.orders;
+        
+        return orders;
     } catch (error) {
         console.error('Error fetching orders:', error);
         return [];
     }
-}
-
-// ===== INITIALIZATION =====
-async function init() {
-    try {
-        // Fetch orders dari API
-        const orders = await fetchOrders();
-        
-        // Render summary cards
-        renderSummary(orders);
-        
-        // Render order list
-        renderOrders(orders);
-    } catch (error) {
-        console.error('Error initializing page:', error);
-    }
-}
-
-// ===== PAGE LOAD =====
-document.addEventListener('DOMContentLoaded', init);
-
-// ===== EXPORTS (if using modules) =====
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = {
-        fetchOrders,
-        renderOrders,
-        handleViewDetail,
-        handlePayNow,
-        formatCurrency
-    };
 }
