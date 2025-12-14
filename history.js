@@ -140,7 +140,7 @@ function renderOrders() {
 
 // ===== VIEW ORDER DETAIL =====
 function viewOrderDetail(orderNumber) {
-    alert('Detail Pesanan: ' + orderNumber + '\n\nHalaman detail akan segera tersedia.');
+    window.location.href = 'detail-history.html';
     // window.location.href = '/order/detail/' + orderNumber;
 }
 
