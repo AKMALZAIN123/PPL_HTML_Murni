@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail Pesanan - Bhineka Cipta Kreasi</title>
+    <title>Banner X Premium - Bhineka Cipta Kreasi</title>
     <link rel="stylesheet" href="detail.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -13,13 +13,13 @@
         <div class="container">
             <div class="nav-wrapper">
                 <a href="index.html" class="logo">
-                    <img src="img/logohitam.png" alt="Bhineka Cipta Kreasi Logo" class="logo-img">
+                    <i class="fas fa-print"></i>
+                    <span>Bhineka Cipta Kreasi</span>
                 </a>
                 
                 <div class="nav-links" id="navLinks">
-                    <a href="index.html">Beranda</a>
+                    <a href="index.html" class="active">Beranda</a>
                     <a href="produk.html">Produk</a>
-                    <a href="history.html">Pesanan Saya</a>
                     <a href="about.html">Tentang</a>
                     <a href="kontak.html">Kontak</a>
                 </div>
@@ -43,160 +43,520 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <main class="main-content">
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
         <div class="container">
-            
-            <!-- Back Button -->
-            <a href="{{ route('history') }}" class="back-btn">
-                <i class="fas fa-arrow-left"></i>
-                Kembali ke Pesanan
-            </a>
-
-            <!-- Order Header -->
-            <div class="order-header-box">
-                <div class="order-info">
-                    <h1>ORD-2024-001234</h1>
-                    <p>Dipesan pada 15 Desember 2024, 14:30</p>
-                </div>
-                <div class="order-price">
-                    <span class="price-label">Total Pembayaran</span>
-                    <span class="price-amount">Rp 600.000</span>
-                </div>
+            <div class="breadcrumb-items">
+                <a href="index.html">
+                    <i class="fas fa-home"></i>
+                    Beranda
+                </a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="products.html">Produk</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="products.html?category=banner">Banner & Spanduk</a>
+                <i class="fas fa-chevron-right"></i>
+                <span id="productName">Banner X Premium</span>
             </div>
-
-            <!-- Progress Tracker -->
-            <div class="progress-section">
-                <h2>Status Pesanan</h2>
-                <div class="progress-tracker">
-                    
-                    <!-- Step 1: Packaging (Active) -->
-                    <div class="progress-step active">
-                        <div class="step-icon">
-                            <i class="fas fa-box"></i>
-                        </div>
-                        <div class="step-content">
-                            <h3>Pengerjaan</h3>
-                            <p>Pesanan sedang dikerjakan</p>
-                            <span class="step-time">15 Des 2024, 15:00</span>
-                        </div>
-                    </div>
-
-                    <!-- Connector Line -->
-                    <div class="progress-line"></div>
-
-                    <!-- Step 2: On The Road (Upcoming) -->
-                    <div class="progress-step upcoming">
-                        <div class="step-icon">
-                            <i class="fas fa-truck"></i>
-                        </div>
-                        <div class="step-content">
-                            <h3>Dalam Pengiriman</h3>
-                            <p>Dikirim dengan truk perusahaan</p>
-                            <span class="step-time">Estimasi: 17 Des 2024</span>
-                        </div>
-                    </div>
-
-                    <!-- Connector Line -->
-                    <div class="progress-line"></div>
-
-                    <!-- Step 3: Delivered (Upcoming) -->
-                    <div class="progress-step upcoming">
-                        <div class="step-icon">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                        <div class="step-content">
-                            <h3>Selesai</h3>
-                            <p>Pesanan telah sampai</p>
-                            <span class="step-time">-</span>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- Order Items -->
-            <div class="items-section">
-                <h2>Produk Dipesan</h2>
-                
-                <div class="item-list">
-                    <div class="item-card">
-                        <img src="https://images.unsplash.com/photo-1611329857570-f02f340e7378?w=150&h=150&fit=crop" alt="Banner X Premium" class="item-img">
-                        <div class="item-info">
-                            <h3>Banner X Premium</h3>
-                            <p>Ukuran 160x60cm, Material Premium</p>
-                            <div class="item-meta">
-                                <span>Jumlah: 2</span>
-                                <span class="item-price">Rp 250.000</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item-card">
-                        <img src="https://images.unsplash.com/photo-1530435460869-d13625c69bbf?w=150&h=150&fit=crop" alt="Kartu Undangan" class="item-img">
-                        <div class="item-info">
-                            <h3>Kartu Undangan Custom</h3>
-                            <p>100 pcs, Hardcover dengan emboss</p>
-                            <div class="item-meta">
-                                <span>Jumlah: 1</span>
-                                <span class="item-price">Rp 350.000</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Shipping Info -->
-            <div class="info-grid">
-                <div class="info-card">
-                    <div class="info-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <div class="info-content">
-                        <h3>Alamat Pengiriman</h3>
-                        <p>Jl. Sudirman No. 123, Purwokerto<br>Banyumas, Jawa Tengah 53111</p>
-                    </div>
-                </div>
-
-                <div class="info-card">
-                    <div class="info-icon">
-                        <i class="fas fa-credit-card"></i>
-                    </div>
-                    <div class="info-content">
-                        <h3>Metode Pembayaran</h3>
-                        <p>Transfer Bank BCA<br>Status: <span class="badge-paid">Lunas</span></p>
-                    </div>
-                </div>
-
-                <div class="info-card">
-                    <div class="info-icon">
-                        <i class="fas fa-phone"></i>
-                    </div>
-                    <div class="info-content">
-                        <h3>Kontak</h3>
-                        <p>+62 812 3456 7890<br>customer@email.com</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Total Summary -->
-            <div class="summary-box">
-                <div class="summary-row">
-                    <span>Subtotal Produk</span>
-                    <span>Rp 600.000</span>
-                </div>
-                <div class="summary-row">
-                    <span>Biaya Pengiriman</span>
-                    <span>Gratis</span>
-                </div>
-                <div class="summary-row total">
-                    <span>Total</span>
-                    <span>Rp 600.000</span>
-                </div>
-            </div>
-
         </div>
-    </main>
+    </section>
+
+    <!-- Product Detail -->
+    <section class="product-detail-section">
+        <div class="container">
+            <div class="product-detail-grid">
+                <!-- Left Side - Image Gallery -->
+                <div class="product-gallery">
+                    <div class="main-image">
+                        <button class="wishlist-btn" id="wishlistBtn">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <div class="product-badge">Terlaris</div>
+                        <img src="https://images.unsplash.com/photo-1611329857570-f02f340e7378?w=800" alt="Banner X Premium" id="mainImage">
+                        <button class="zoom-btn" id="zoomBtn">
+                            <i class="fas fa-search-plus"></i>
+                        </button>
+                    </div>
+                    <div class="thumbnail-gallery">
+                        <div class="thumbnail active">
+                            <img src="https://images.unsplash.com/photo-1611329857570-f02f340e7378?w=200" alt="Thumbnail 1">
+                        </div>
+                        <div class="thumbnail">
+                            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=200" alt="Thumbnail 2">
+                        </div>
+                        <div class="thumbnail">
+                            <img src="https://images.unsplash.com/photo-1609921212029-bb5a28e60960?w=200" alt="Thumbnail 3">
+                        </div>
+                        <div class="thumbnail">
+                            <img src="https://images.unsplash.com/photo-1596079890744-c1a0462d0975?w=200" alt="Thumbnail 4">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side - Product Info -->
+                <div class="product-info-section">
+                    <div class="product-category">Banner & Spanduk</div>
+                    <h1 class="product-title">Banner X Premium</h1>
+                    
+                    <div class="product-rating-section">
+                        <div class="rating-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="rating-number">4.5</span>
+                        </div>
+                        <div class="rating-divider">|</div>
+                        <div class="rating-reviews">
+                            <i class="far fa-comment"></i>
+                            <span>127 Ulasan</span>
+                        </div>
+                        <div class="rating-divider">|</div>
+                        <div class="rating-sold">
+                            <i class="fas fa-box"></i>
+                            <span>543 Terjual</span>
+                        </div>
+                    </div>
+
+                    <div class="product-price-section">
+                        <div class="price-main" id="priceDisplay">Rp 125.000</div>
+                        <div class="price-info">
+                            <span class="discount-badge">-15%</span>
+                            <span class="price-old">Rp 147.000</span>
+                        </div>
+                    </div>
+
+                    <div class="product-description">
+                        <p>Banner X Premium dengan material berkualitas tinggi, tahan lama dan warna tajam. Cocok untuk promosi indoor maupun outdoor. Termasuk standing portable yang mudah dibawa.</p>
+                    </div>
+
+                    <!-- Variants Selection -->
+                    <div class="product-variants">
+                        <!-- Size -->
+                        <div class="variant-group">
+                            <label class="variant-label">
+                                <i class="fas fa-ruler-combined"></i>
+                                Ukuran
+                            </label>
+                            <div class="variant-options">
+                                <button class="variant-btn active" data-size="160x60">160 x 60 cm</button>
+                                <button class="variant-btn" data-size="180x80">180 x 80 cm</button>
+                                <button class="variant-btn" data-size="200x80">200 x 80 cm</button>
+                            </div>
+                        </div>
+
+                        <!-- Material -->
+                        <div class="variant-group">
+                            <label class="variant-label">
+                                <i class="fas fa-layer-group"></i>
+                                Bahan
+                            </label>
+                            <div class="variant-options">
+                                <button class="variant-btn active" data-material="flexi">Flexi Korea</button>
+                                <button class="variant-btn" data-material="albatros">Albatros</button>
+                                <button class="variant-btn" data-material="vinyl">Vinyl Premium</button>
+                            </div>
+                        </div>
+
+                        <!-- Print Type -->
+                        <div class="variant-group">
+                            <label class="variant-label">
+                                <i class="fas fa-print"></i>
+                                Jenis Cetak
+                            </label>
+                            <div class="variant-options">
+                                <button class="variant-btn active" data-print="digital">Digital Print</button>
+                                <button class="variant-btn" data-print="uv">UV Print</button>
+                            </div>
+                        </div>
+
+                        <!-- Quantity -->
+                        <div class="variant-group">
+                            <label class="variant-label">
+                                <i class="fas fa-boxes"></i>
+                                Jumlah
+                            </label>
+                            <div class="quantity-selector">
+                                <button class="qty-btn" id="qtyMinus">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <input type="number" class="qty-input" id="qtyInput" value="1" min="1" max="100">
+                                <button class="qty-btn" id="qtyPlus">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                                <span class="stock-info">Stok: <strong>250</strong></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="product-actions">
+                        <button class="btn-add-cart" id="btnAddCart">
+                            <i class="fas fa-shopping-cart"></i>
+                            Tambah ke Keranjang
+                        </button>
+                        <button class="btn-buy-now" id="btnBuyNow">
+                            <i class="fas fa-bolt"></i>
+                            Beli Sekarang
+                        </button>
+                    </div>
+
+                    <!-- Product Features -->
+                    <div class="product-features">
+                        <div class="feature-item">
+                            <i class="fas fa-truck"></i>
+                            <div>
+                                <strong>Gratis Ongkir</strong>
+                                <span>Minimal belanja Rp 500.000</span>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <strong>Garansi Kualitas</strong>
+                                <span>100% uang kembali jika cacat</span>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Proses Cepat</strong>
+                                <span>2-3 hari kerja</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Share -->
+                    <div class="product-share">
+                        <span>Bagikan:</span>
+                        <div class="share-buttons">
+                            <button class="share-btn whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                            <button class="share-btn facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </button>
+                            <button class="share-btn twitter">
+                                <i class="fab fa-twitter"></i>
+                            </button>
+                            <button class="share-btn link">
+                                <i class="fas fa-link"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Tabs -->
+            <div class="product-tabs-section">
+                <div class="tabs-header">
+                    <button class="tab-btn active" data-tab="description">
+                        <i class="fas fa-align-left"></i>
+                        Deskripsi
+                    </button>
+                    <button class="tab-btn" data-tab="specifications">
+                        <i class="fas fa-list-ul"></i>
+                        Spesifikasi
+                    </button>
+                    <button class="tab-btn" data-tab="reviews">
+                        <i class="fas fa-star"></i>
+                        Ulasan (127)
+                    </button>
+                    <button class="tab-btn" data-tab="custom">
+                        <i class="fas fa-edit"></i>
+                        Custom Order
+                    </button>
+                </div>
+
+                <div class="tabs-content">
+                    <!-- Description Tab -->
+                    <div class="tab-content active" id="description">
+                        <h3>Deskripsi Produk</h3>
+                        <p>Banner X Premium adalah solusi terbaik untuk kebutuhan promosi bisnis Anda. Dengan material berkualitas tinggi dan sistem standing yang portable, banner ini sangat mudah dipasang dan dibawa kemana-mana.</p>
+                        
+                        <h4>Keunggulan Produk:</h4>
+                        <ul>
+                            <li><strong>Material Premium:</strong> Menggunakan flexi korea dengan ketebalan optimal untuk hasil print yang tajam dan tahan lama</li>
+                            <li><strong>Standing Kokoh:</strong> Dilengkapi X-banner stand aluminium yang kuat dan ringan</li>
+                            <li><strong>Mudah Dibawa:</strong> Desain portable dengan tas carrying case</li>
+                            <li><strong>Print Berkualitas:</strong> Menggunakan mesin digital printing resolusi tinggi</li>
+                            <li><strong>Tahan Lama:</strong> Anti air dan tidak mudah luntur</li>
+                        </ul>
+
+                        <h4>Cocok Untuk:</h4>
+                        <ul>
+                            <li>Event pameran dan exhibition</li>
+                            <li>Promosi produk di toko retail</li>
+                            <li>Seminar dan workshop</li>
+                            <li>Grand opening usaha</li>
+                            <li>Backdrop foto produk</li>
+                        </ul>
+                    </div>
+
+                    <!-- Specifications Tab -->
+                    <div class="tab-content" id="specifications">
+                        <h3>Spesifikasi Produk</h3>
+                        <table class="specs-table">
+                            <tr>
+                                <td><strong>Ukuran Tersedia</strong></td>
+                                <td>160x60 cm, 180x80 cm, 200x80 cm</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Material Banner</strong></td>
+                                <td>Flexi Korea, Albatros, Vinyl Premium</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Material Stand</strong></td>
+                                <td>Aluminium Alloy</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Berat Total</strong></td>
+                                <td>± 2.5 kg (include stand & tas)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Jenis Cetak</strong></td>
+                                <td>Digital Print / UV Print</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Resolusi Print</strong></td>
+                                <td>1440 dpi</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Finishing</strong></td>
+                                <td>Laminasi glossy/doff (optional)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Waktu Produksi</strong></td>
+                                <td>2-3 hari kerja</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Garansi</strong></td>
+                                <td>6 bulan (stand), 3 bulan (print)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Include</strong></td>
+                                <td>X-Banner Stand, Banner Print, Carrying Bag</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!-- Reviews Tab -->
+                    <div class="tab-content" id="reviews">
+                        <h3>Ulasan Pelanggan</h3>
+                        <div class="reviews-summary">
+                            <div class="rating-overview">
+                                <div class="rating-large">4.5</div>
+                                <div class="rating-stars-large">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <p>Dari 127 ulasan</p>
+                            </div>
+                            <div class="rating-breakdown">
+                                <div class="rating-bar-item">
+                                    <span>5 <i class="fas fa-star"></i></span>
+                                    <div class="progress-bar"><div class="progress-fill" style="width: 70%"></div></div>
+                                    <span>89</span>
+                                </div>
+                                <div class="rating-bar-item">
+                                    <span>4 <i class="fas fa-star"></i></span>
+                                    <div class="progress-bar"><div class="progress-fill" style="width: 20%"></div></div>
+                                    <span>25</span>
+                                </div>
+                                <div class="rating-bar-item">
+                                    <span>3 <i class="fas fa-star"></i></span>
+                                    <div class="progress-bar"><div class="progress-fill" style="width: 7%"></div></div>
+                                    <span>9</span>
+                                </div>
+                                <div class="rating-bar-item">
+                                    <span>2 <i class="fas fa-star"></i></span>
+                                    <div class="progress-bar"><div class="progress-fill" style="width: 2%"></div></div>
+                                    <span>3</span>
+                                </div>
+                                <div class="rating-bar-item">
+                                    <span>1 <i class="fas fa-star"></i></span>
+                                    <div class="progress-bar"><div class="progress-fill" style="width: 1%"></div></div>
+                                    <span>1</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="reviews-list">
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div class="reviewer-avatar">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="reviewer-info">
+                                        <strong>Budi Santoso</strong>
+                                        <div class="review-rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <span class="review-date">2 hari yang lalu</span>
+                                    </div>
+                                </div>
+                                <div class="review-content">
+                                    <p>Kualitas banner sangat bagus, warna cetak tajam dan standing kokoh. Pengiriman cepat, packing rapi. Sangat puas dan recommended!</p>
+                                    <div class="review-variant">Variasi: 160x60 cm, Flexi Korea</div>
+                                </div>
+                            </div>
+
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div class="reviewer-avatar">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="reviewer-info">
+                                        <strong>Siti Nurhaliza</strong>
+                                        <div class="review-rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                        <span class="review-date">1 minggu yang lalu</span>
+                                    </div>
+                                </div>
+                                <div class="review-content">
+                                    <p>Bagus banget untuk event! Tapi agak susah pasang pertama kali. Overall memuaskan.</p>
+                                    <div class="review-variant">Variasi: 180x80 cm, Albatros</div>
+                                </div>
+                            </div>
+
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div class="reviewer-avatar">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="reviewer-info">
+                                        <strong>Ahmad Rizki</strong>
+                                        <div class="review-rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <span class="review-date">2 minggu yang lalu</span>
+                                    </div>
+                                </div>
+                                <div class="review-content">
+                                    <p>Sudah order beberapa kali untuk berbagai event. Selalu puas dengan kualitas dan pelayanannya. Fast response dan pengerjaan cepat!</p>
+                                    <div class="review-variant">Variasi: 200x80 cm, Vinyl Premium</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Custom Order Tab -->
+                    <div class="tab-content" id="custom">
+                        <h3>Custom Order</h3>
+                        <p class="custom-intro">Butuh desain khusus atau ukuran yang berbeda? Kami siap membantu Anda! Isi form di bawah ini dan tim kami akan menghubungi Anda.</p>
+                        
+                        <form class="custom-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Nama Lengkap</label>
+                                    <input type="text" placeholder="Masukkan nama Anda" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Nomor WhatsApp</label>
+                                    <input type="tel" placeholder="08xxx" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" placeholder="nama@email.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Ukuran Custom (opsional)</label>
+                                <input type="text" placeholder="Contoh: 150 x 70 cm">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Jumlah Order</label>
+                                <input type="number" placeholder="Minimal 1 pcs" min="1" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Deskripsi Kebutuhan</label>
+                                <textarea rows="5" placeholder="Jelaskan kebutuhan Anda (desain, ukuran, bahan, deadline, dll)" required></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Upload File Desain (opsional)</label>
+                                <div class="file-upload">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <span>Klik atau drag file ke sini</span>
+                                    <small>Format: JPG, PNG, PDF, AI (Max 10MB)</small>
+                                    <input type="file" accept=".jpg,.jpeg,.png,.pdf,.ai">
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn-submit-custom">
+                                <i class="fas fa-paper-plane"></i>
+                                Kirim Permintaan Custom
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Products -->
+            <div class="related-products-section">
+                <h2>Produk Terkait</h2>
+                <div class="related-products-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400" alt="Roll Up Banner">
+                        </div>
+                        <div class="product-info">
+                            <h3>Roll Up Banner</h3>
+                            <div class="product-price">Rp 225.000</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1609921212029-bb5a28e60960?w=400" alt="Spanduk">
+                        </div>
+                        <div class="product-info">
+                            <h3>Spanduk Flexi Korea</h3>
+                            <div class="product-price">Rp 35.000/m²</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1596079890744-c1a0462d0975?w=400" alt="Backdrop">
+                        </div>
+                        <div class="product-info">
+                            <h3>Backdrop Portable</h3>
+                            <div class="product-price">Rp 450.000</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?w=400" alt="Standing Banner">
+                        </div>
+                        <div class="product-info">
+                            <h3>Standing Banner Mini</h3>
+                            <div class="product-price">Rp 95.000</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -204,36 +564,37 @@
             <div class="footer-grid">
                 <div class="footer-column">
                     <div class="footer-logo">
-                        <a href="index.html" class="logo">
-                            <img src="img/logoputih.png" alt="Bhineka Cipta Kreasi Logo" class="logo-img">
-                        </a>
+                        <i class="fas fa-print"></i>
+                        <span>Bhineka Cipta Kreasi</span>
                     </div>
-                    <p>Solusi terpercaya untuk semua kebutuhan percetakan dan periklanan Anda sejak 20+ tahun.</p>
+                    <p>Solusi terpercaya untuk semua kebutuhan percetakan dan periklanan Anda sejak 2010.</p>
                     <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 
                 <div class="footer-column">
-                    <h4>Produk Kami</h4>
+                    <h4>Kategori</h4>
                     <ul>
-                        <li><a href="index.html#categories">Banner & Spanduk</a></li>
-                        <li><a href="index.html#categories">Kartu Undangan</a></li>
-                        <li><a href="index.html#categories">Lanyard & ID Card</a></li>
-                        <li><a href="produk.html">Lihat Semua Produk</a></li>
+                        <li><a href="#">Banner & Spanduk</a></li>
+                        <li><a href="#">Kartu Undangan</a></li>
+                        <li><a href="#">Merchandise</a></li>
+                        <li><a href="#">Alat Event</a></li>
+                        <li><a href="#">Media Digital</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column">
-                    <h4>Informasi</h4>
+                    <h4>Layanan Kami</h4>
                     <ul>
-                        <li><a href="about.html">Tentang Kami</a></li>
-                        <li><a href="index.html#cara-pesan">Cara Pemesanan</a></li>
-                        <li><a href="syarat.html">Syarat & Ketentuan</a></li>
-                        <li><a href="privasi.html">Kebijakan Privasi</a></li>
+                        <li><a href="#">Desain Grafis</a></li>
+                        <li><a href="#">Cetak Digital</a></li>
+                        <li><a href="#">Cetak Offset</a></li>
+                        <li><a href="#">Custom Order</a></li>
+                        <li><a href="#">Konsultasi</a></li>
                     </ul>
                 </div>
                 
@@ -242,15 +603,19 @@
                     <ul class="contact-info">
                         <li>
                             <i class="fas fa-phone"></i>
-                            <span>(0281) 6572506</span>
+                            <span>+62 812-3456-7890</span>
                         </li>
                         <li>
                             <i class="fas fa-envelope"></i>
-                            <span>purwokerto@karyasatria.com</span>
+                            <span>info@bhinekaciptakreasi.com</span>
                         </li>
                         <li>
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Jl. Raya Prompong RT 04/04, Baturaden</span>
+                            <span>Jl. Contoh No. 123, Jakarta</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Senin - Sabtu: 08.00 - 17.00</span>
                         </li>
                     </ul>
                 </div>
@@ -258,6 +623,11 @@
             
             <div class="footer-bottom">
                 <p>&copy; 2025 Bhineka Cipta Kreasi. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="privasi.html">Kebijakan Privasi</a>
+                    <a href="syarat.html">Syarat & Ketentuan</a>
+                    <a href="faq.html">FAQ</a>
+                </div>
             </div>
         </div>
     </footer>
